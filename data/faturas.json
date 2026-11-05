@@ -1,0 +1,12 @@
+[
+  {
+    "id": 101,
+    "clienteId": 2,
+    "referencia": "2026-11",
+    "vencimento": "2026-12-10",
+    "valor": 209.95,
+    "economia": 37.05,
+    "status": "prevista",
+    "pixCopiaECola": null
+  }
+]

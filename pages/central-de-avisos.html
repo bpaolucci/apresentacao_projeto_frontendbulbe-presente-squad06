@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Central de avisos · Bulbe</title>
+
+  <!-- Fonte Poppins (a mesma do app) -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Base do squad (cabeçalho e menu) + estilo desta tela -->
+  <link rel="stylesheet" href="../assets/css/bulbe-ui.css">
+  <link rel="stylesheet" href="../assets/css/central-de-avisos.css">
+  <script type="module" src="../assets/js/app.js"></script>
+</head>
+<body>
+
+  <!-- ================= CABEÇALHO (igual ao template) ================= -->
+  <header class="topo">
+    <a class="topo-botao" href="../escolher-cliente.html" aria-label="Voltar para a escolha de cliente">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </a>
+
+    <div class="topo-logo">
+      <img src="../assets/img/logo-bulbe-branco.svg" alt="Bulbe">
+    </div>
+
+    <div class="topo-direita">
+      <a class="topo-botao" href="central-de-avisos.html" aria-label="Avisos">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/></svg>
+      </a>
+      <a class="topo-avatar" href="#" aria-label="Meu perfil">
+        <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="8" r="4.5"/><path d="M3.5 21a8.5 8.5 0 0 1 17 0Z"/></svg>
+      </a>
+    </div>
+  </header>
+
+
+  <!-- ================= CONTEÚDO DA TELA ================= -->
+  <!-- HU03 · Central de avisos. O JS preenche as listas com data/avisos.json -->
+  <main class="avisos-tela">
+
+    <section class="saudacao">
+      <h1 id="saudacao-titulo">Central de avisos</h1>
+      <p class="texto-secundario">Tudo que a Bulbe te enviou fica aqui, mesmo se alguma mensagem não chegar.</p>
+    </section>
+
+    <p class="mensagem-erro" id="mensagem-erro" role="alert" hidden>
+      Não foi possível carregar seus avisos. O projeto está aberto pelo Live Server?
+    </p>
+
+    <!-- Resumo: quantas pendências e quantos avisos não lidos -->
+    <section class="resumo" aria-label="Resumo">
+      <div class="resumo-item resumo-pendencias">
+        <strong id="contador-pendencias">0</strong>
+        <span>suas pendências</span>
+      </div>
+      <div class="resumo-item">
+        <strong id="contador-nao-lidos">0</strong>
+        <span>avisos não lidos</span>
+      </div>
+    </section>
+
+    <!-- Pendências: sempre no topo -->
+    <section aria-labelledby="titulo-pendencias">
+      <h2 id="titulo-pendencias" class="titulo-secao">Pendências</h2>
+
+      <ul class="lista-pendencias" id="lista-pendencias"></ul>
+
+      <div class="sem-pendencias" id="sem-pendencias" hidden>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11"/><path d="M7 12.5l3.2 3.2L17 9"/></svg>
+        <p><strong>Nenhuma pendência.</strong> Seu processo está andando.</p>
+      </div>
+    </section>
+
+    <!-- Avisos: do mais recente para o mais antigo -->
+    <section aria-labelledby="titulo-avisos">
+      <h2 id="titulo-avisos" class="titulo-secao">Seus avisos</h2>
+      <p class="texto-dica">Toque em um aviso para ler a mensagem completa.</p>
+      <ul class="lista-avisos" id="lista-avisos"></ul>
+    </section>
+
+    <!-- Por que esta tela existe: a mensagem pode falhar -->
+    <aside class="cartao-info">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 11v6M12 7.5v.01"/></svg>
+      <div>
+        <p class="cartao-info-titulo">Não recebeu alguma mensagem?</p>
+        <p>Às vezes o WhatsApp falha. Tudo que a Bulbe te enviar também aparece aqui, então você não perde nada.</p>
+      </div>
+    </aside>
+
+  </main>
+
+
+  <!-- ================= MENU DE BAIXO (Avisos ativo) ================= -->
+    <nav class="menu" aria-label="Menu principal">
+    <a href="acompanhe-sua-energia.html">
+      <span class="menu-icone">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>
+      </span>
+      Energia
+    </a>
+
+    <a class="ativo" href="central-de-avisos.html" aria-current="page">
+      <span class="menu-icone">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/></svg>
+      </span>
+      Avisos
+    </a>
+
+    <a href="primeira-fatura.html">
+      <span class="menu-icone">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8M16 13H8M16 17H8"/></svg>
+      </span>
+      Fatura
+    </a>
+
+    <a href="confirmar-contatos.html">
+      <span class="menu-icone">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 21a8 8 0 0 1 13.292-6"/><circle cx="10" cy="8" r="5"/><path d="m16 19 2 2 4-4"/></svg>
+      </span>
+      Contatos
+    </a>
+  </nav>
+
+  <script type="module" src="../assets/js/central-de-avisos.js"></script>
+</body>
+</html>

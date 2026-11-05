@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bulbe Presente · Demonstração</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/bulbe-ui.css">
+  <style>
+    /* Estilo só desta página de entrada da demonstração */
+    .entrada { max-width: 480px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
+    .entrada h1 { margin: 0; font-size: var(--titulo-tamanho); font-weight: var(--titulo-peso); line-height: 1.3; color: var(--cor-azul); }
+    .entrada p { margin: 0; line-height: 1.5; }
+    .clientes { margin: 0; padding: 0; list-style: none; display: grid; gap: 12px; }
+    .cliente {
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      padding: 16px; border: 1px solid var(--cor-linha); border-radius: var(--raio-card);
+      color: var(--cor-texto); text-decoration: none;
+    }
+    .cliente:hover, .cliente:focus-visible { border-color: var(--cor-azul); background: var(--cor-azul-claro); }
+    .cliente strong { display: block; color: var(--cor-azul); font-weight: 600; }
+    .cliente small { font-size: 14px; color: var(--cor-texto-secundario); }
+    .selo { flex-shrink: 0; padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 600;
+            background: var(--cor-azul-claro); color: var(--cor-azul); }
+    .primeiro-acesso { font-size: 14px; }
+    .primeiro-acesso a { color: var(--cor-azul); font-weight: 600; }
+  </style>
+</head>
+<body>
+  <header class="topo">
+    <span></span>
+    <div class="topo-logo">
+      <img src="assets/img/logo-bulbe-branco.svg" alt="Bulbe">
+    </div>
+    <span></span>
+  </header>
+
+  <main class="entrada">
+    <h1>Bulbe Presente</h1>
+    <p class="texto-secundario">Protótipo do app da Bulbe para o período entre a adesão e a primeira fatura.
+      Escolha um cliente fictício para entrar no app com os dados dele.</p>
+
+    <ul class="clientes" id="lista-clientes"></ul>
+
+    <p class="primeiro-acesso texto-secundario">Para ver a tela de primeiro acesso depois da adesão, escolha um
+      cliente e abra <a href="pages/hu01.html">as boas-vindas</a>.</p>
+  </main>
+
+  <script type="module" src="assets/js/main.js"></script>
+</body>
+</html>

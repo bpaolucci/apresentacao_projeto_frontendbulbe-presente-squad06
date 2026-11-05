@@ -1,0 +1,283 @@
+/* =========================================================
+   HU03 · Central de avisos
+   Usa as variáveis do cores.css (via bulbe-ui.css) e acrescenta as desta tela.
+   ========================================================= */
+
+h1, h2, p, ul { margin: 0; }
+ul { padding: 0; list-style: none; }
+
+/* ---------- Estrutura ---------- */
+.avisos-tela {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.saudacao h1 {
+  font-size: var(--titulo-tamanho);
+  font-weight: var(--titulo-peso);
+  line-height: 1.3;
+  color: var(--cor-azul);
+}
+
+.saudacao p { margin-top: 4px; font-size: 14px; line-height: 1.5; }
+
+
+.titulo-secao {
+  margin-bottom: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--cor-azul);
+}
+
+.texto-dica {
+  margin: -6px 0 12px;
+  font-size: 12px;
+  color: var(--cor-texto-secundario);
+}
+
+.mensagem-erro {
+  padding: 16px;
+  border-radius: 12px;
+  background: var(--cor-erro-fundo);
+  color: var(--cor-erro-texto);
+  font-size: 14px;
+}
+
+/* ---------- Resumo ---------- */
+.resumo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.resumo-item {
+  padding: 12px 14px;
+  border: 1px solid var(--cor-linha);
+  border-radius: 12px;
+}
+
+.resumo-item strong {
+  display: block;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--cor-azul);
+}
+
+.resumo-item span { font-size: 12px; color: var(--cor-texto-secundario); }
+
+.resumo-item.tem-pendencia strong { color: var(--cor-laranja-texto); }
+
+/* ---------- Pendências ---------- */
+.lista-pendencias {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pendencia {
+  padding: 14px 16px;
+  border: 1px solid var(--cor-laranja-borda);
+  border-radius: 12px;
+  background: var(--cor-laranja-fundo);
+}
+
+.pendencia-titulo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* Bolinha laranja com "!" antes do título */
+.pendencia-titulo::before {
+  content: "!";
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--cor-laranja);
+  color: var(--cor-branco);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.pendencia-texto {
+  margin: 4px 0 12px 28px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.pendencia-rodape {
+  display: flex;
+  flex-wrap: wrap; /* em tela estreita, o botão desce para a linha de baixo */
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-left: 28px;
+}
+
+.pendencia-prazo {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--cor-laranja-texto);
+}
+
+.botao {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px; /* área de toque confortável no celular */
+  padding: 0 18px;
+  border-radius: 999px;
+  background: var(--cor-azul);
+  color: var(--cor-branco);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.botao:focus-visible,
+.aviso-resumo:focus-visible {
+  outline: 3px solid var(--cor-laranja);
+  outline-offset: 2px;
+}
+
+/* Estado vazio: sem pendências */
+.sem-pendencias {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1px solid var(--cor-verde-borda);
+  border-radius: 12px;
+  background: var(--cor-verde-fundo);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.sem-pendencias svg {
+  flex: none;
+  width: 24px;
+  height: 24px;
+}
+
+.sem-pendencias circle { fill: var(--cor-verde); }
+
+.sem-pendencias path {
+  fill: none;
+  stroke: var(--cor-branco);
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ---------- Avisos ---------- */
+.lista-avisos {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.aviso {
+  border: 1px solid var(--cor-linha);
+  border-radius: 12px;
+  background: var(--cor-branco);
+}
+
+.aviso-resumo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  list-style: none; /* tira o triângulo padrão do <details> */
+}
+
+.aviso-resumo::-webkit-details-marker { display: none; }
+
+.aviso-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.aviso-data { font-size: 12px; color: var(--cor-texto-secundario); }
+
+.aviso-canal {
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.canal-whatsapp { background: #e3f6ea; color: var(--cor-verde-escuro); }
+.canal-email    { background: #eef0f6; color: var(--cor-texto); }
+.canal-app      { background: var(--cor-azul-claro); color: var(--cor-azul); }
+
+.aviso-titulo {
+  font-size: 14px;
+  font-weight: 500;
+  overflow-wrap: anywhere; /* título longo quebra em vez de vazar no celular */
+}
+
+.aviso-texto {
+  padding: 0 16px 14px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--cor-texto-secundario);
+}
+
+/* Não lido: fundo lilás, título em negrito e ponto azul antes da data */
+.aviso.nao-lido {
+  border-color: #d8dcff;
+  background: var(--cor-azul-claro);
+}
+
+.aviso.nao-lido .aviso-titulo {
+  font-weight: 600;
+  color: var(--cor-azul);
+}
+
+.aviso.nao-lido .aviso-data::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 6px;
+  border-radius: 50%;
+  background: var(--cor-azul);
+}
+
+/* ---------- Cartão de informação ---------- */
+.cartao-info {
+  display: flex;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: var(--cor-azul-claro);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.cartao-info svg {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: var(--cor-azul);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.cartao-info-titulo {
+  font-weight: 600;
+  color: var(--cor-azul);
+}

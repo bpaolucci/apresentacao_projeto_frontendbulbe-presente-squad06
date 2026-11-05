@@ -1,0 +1,45 @@
+/* =========================================================
+   Cores e medidas compartilhadas por todas as telas
+   Cada CSS de tela importa este arquivo na 1ª linha:
+     @import url("cores.css");
+   Para mudar uma cor do app inteiro, mude só aqui.
+   ========================================================= */
+
+:root {
+  /* Base (mesmos valores do bulbe-ui.css, para telas que não usam ele) */
+  --cor-azul: #08068d;
+  --cor-azul-claro: #eef0ff;
+  --cor-texto: #3e4d5b;
+  --cor-texto-secundario: #536679;
+  --cor-linha: #d1d9e0;
+  --cor-branco: #ffffff;
+  --fonte: "Poppins", sans-serif;
+
+  /* Verde: sucesso, etapas concluídas */
+  --cor-verde: #26d07c;
+  --cor-verde-escuro: #1e7a45;
+  --cor-verde-fundo: #eaf8ef;
+  --cor-verde-borda: #bfe8cc;
+
+  /* Laranja: pendências e destaques */
+  --cor-laranja: #ff9e1b;
+  --cor-laranja-texto: #8a4b00;
+  --cor-laranja-fundo: #fff6e8;
+  --cor-laranja-borda: #f8cf96;
+
+  /* Amarelo: atenção (atraso, observação) */
+  --cor-atencao-fundo: #fff6e0;
+  --cor-atencao-borda: #f2c14e;
+  --cor-atencao-texto: #6b4e00;
+
+  /* Vermelho: erro */
+  --cor-erro: #c62828;
+  --cor-erro-fundo: #fdecec;
+  --cor-erro-borda: #e5484d;
+  --cor-erro-texto: #8e1b1b;
+
+  /* Medidas */
+  --raio-card: 12px;
+  --titulo-tamanho: 24px;
+  --titulo-peso: 600;
+}

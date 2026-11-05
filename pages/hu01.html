@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boas-vindas · Bulbe</title>
+    <link rel="stylesheet" href="../assets/css/hu01.css">
+    <script src="../assets/js/hu01.js" defer></script>
+  <script type="module" src="../assets/js/app.js"></script>
+</head>
+<body>
+    <div id="container">
+        <header id="header">
+            <img src="../assets/img/logo-bulbe.png" alt="Bulbe">
+            <h1>Economia atualizada!</h1>
+        </header>
+
+        <main id="main">
+            <div class="conteudo">
+                <h2 class="titulo-pagina">Sua jornada com a Bulbe começou!</h2>
+
+                <section class="cartao confirmacao">
+                    <span class="icone-confirmacao">✓</span>
+                    <div>
+                        <h3>Solicitação recebida</h3>
+                        <p>Seu pedido de adesão foi recebido. Veja os próximos passos e o que fazer enquanto aguarda.</p>
+                    </div>
+                </section>
+
+                <section class="cartao">
+                    <h3>Da adesão ao início do serviço</h3>
+                    <p class="subtitulo">Veja o que acontece depois de contratar a Bulbe.</p>
+
+                    <div class="etapas">
+                        <div class="etapa">
+                            <span class="numero">01</span>
+                            <div>
+                                <h4>A Bulbe confere seus dados</h4>
+                                <p>A Bulbe verifica suas informações. Se houver pendências, consulte os avisos.</p>
+                            </div>
+                        </div>
+                        <div class="etapa">
+                            <span class="numero">02</span>
+                            <div>
+                                <h4>A conexão é preparada com a Cemig</h4>
+                                <p>A preparação pode levar algumas semanas. O prazo varia.</p>
+                            </div>
+                        </div>
+                        <div class="etapa">
+                            <span class="numero">03</span>
+                            <div>
+                                <h4>Início do serviço</h4>
+                                <p>Quando o processo for concluído, a Bulbe confirmará o início do serviço.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="cartao">
+                    <h3>Qual conta devo pagar?</h3>
+                    <p class="subtitulo">Veja como funciona durante a espera.</p>
+
+                    <div class="faturas">
+                        <div class="fatura cemig">
+                            <div class="fatura-topo">Cemig <span>CONTA DE ENERGIA</span></div>
+                            <div class="fatura-corpo">
+                                <small>Unidade consumidora</small>
+                                <div class="linha-falsa"></div>
+                                <div class="linha-falsa curta"></div>
+                                <p>Durante a espera</p>
+                                <strong class="status-pagar">● Pagar normalmente</strong>
+                            </div>
+                        </div>
+                        <div class="fatura bulbe">
+                            <div class="fatura-topo">bulbe <span>FATURA BULBE</span></div>
+                            <div class="fatura-corpo">
+                                <small>Informações da fatura</small>
+                                <div class="linha-falsa"></div>
+                                <div class="linha-falsa curta"></div>
+                                <p>Após a confirmação</p>
+                                <strong class="status-aguardar">● Aguardar orientação</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="situacoes">
+                        <div class="situacao">
+                            <h4>Situação 1 — Enquanto aguarda</h4>
+                            <strong>Continue pagando a Cemig.</strong>
+                            <p>Até a Bulbe confirmar a mudança, continue pagando a Cemig normalmente.</p>
+                        </div>
+                        <div class="situacao">
+                            <h4>Situação 2 — Após a confirmação</h4>
+                            <strong>Confira as orientações da Bulbe.</strong>
+                            <p>Verifique quais faturas e cobranças devem ser pagas em cada empresa.</p>
+                        </div>
+                    </div>
+                    <p class="nota">ⓘ Cobranças separadas ou antigas da Cemig devem ser conferidas.</p>
+                </section>
+
+                <details class="leitura" id="orientacao">
+                    <summary>
+                        <span class="icone-aviso">!</span>
+                        <span class="chamada-leitura">
+                            <small>LEITURA OBRIGATÓRIA</small>
+                            <strong>Recebeu duas contas? Veja qual pagar</strong>
+                            <span class="explicacao-leitura">Entenda por que chegam duas contas e saiba o que fazer em cada situação.</span>
+                            <span class="abrir-leitura">Ler orientação <span>⌄</span></span>
+                        </span>
+                    </summary>
+                    <div class="texto-leitura">
+                        <p class="aviso-importante" id="aviso-importante" hidden><strong>AVISO IMPORTANTE:</strong> Leia as orientações abaixo e confirme que entendeu qual conta pagar.</p>
+                        <h4>1. Por que posso receber duas contas de luz?</h4>
+                        <p>Durante a mudança para a Bulbe, você ainda pode receber uma fatura da Cemig. Isso não significa, por si só, que houve cobrança duplicada.</p>
+
+                        <h4>2. Qual conta devo pagar enquanto aguardo?</h4>
+                        <p>Continue pagando a Cemig normalmente até receber a confirmação da Bulbe sobre o início do serviço e as próximas orientações.</p>
+
+                        <h4>3. Quando muda a forma de pagamento?</h4>
+                        <p>Depois da confirmação da Bulbe, confira as instruções e as faturas recebidas antes de efetuar o pagamento.</p>
+
+                        <h4>4. Quando começo a economizar?</h4>
+                        <p>A economia não começa necessariamente no dia da adesão. O início depende da conclusão do processo e será informado pela Bulbe.</p>
+
+                        <h4>5. E se a Cemig enviar outra cobrança?</h4>
+                        <p>Contas antigas, parcelamentos e serviços específicos podem continuar aparecendo. Confira cada cobrança e procure a Bulbe se tiver dúvidas.</p>
+                        <div class="aceite">
+                            <input type="checkbox" id="leitura-confirmada">
+                            <label for="leitura-confirmada">Li e entendi qual conta devo pagar após a adesão.</label>
+                        </div>
+                    </div>
+                </details>
+
+                <section class="cartao contato">
+                    <h3>Ficou sem notícias da Bulbe?</h3>
+                    <p class="subtitulo">Consulte as informações diretamente, sem depender apenas do WhatsApp.</p>
+                    <div class="atalhos">
+                        <a href="confirmar-contatos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 21a8 8 0 0 1 13.292-6"/><circle cx="10" cy="8" r="5"/><path d="m16 19 2 2 4-4"/></svg>Conferir meus contatos</a>
+                        <a href="central-de-avisos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/></svg>Consultar avisos</a>
+                        <a href="acompanhe-sua-energia.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>Acompanhar minha conexão</a>
+                    </div>
+                </section>
+
+                <section class="cartao contrato">
+                    <div>
+                        <h3>Quer revisar o que foi contratado?</h3>
+                        <p>Acesse o contrato que você já assinou.</p>
+                    </div>
+                    <button type="button" disabled>Acessar contrato</button>
+                </section>
+
+                <a class="continuar" id="continuar" href="confirmar-contatos.html">Continuar →</a>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

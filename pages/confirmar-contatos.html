@@ -1,0 +1,470 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#08068d">
+  <title>Confirme seus contatos · Bulbe</title>
+
+  <!-- Fonte Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- CSS compartilhado e CSS da HU02 -->
+  <link rel="stylesheet" href="../assets/css/bulbe-ui.css">
+  <link rel="stylesheet" href="../assets/css/confirmar-contatos.css">
+  <script type="module" src="../assets/js/app.js"></script>
+</head>
+<body>
+
+  <!-- CABEÇALHO ORIGINAL DO SQUAD -->
+  <header class="topo">
+    <a class="topo-botao" href="../escolher-cliente.html" aria-label="Voltar para a escolha de cliente">
+      <svg viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2"
+           stroke-linecap="round">
+        <path d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </a>
+
+    <div class="topo-logo">
+      <img src="../assets/img/logo-bulbe-branco.svg" alt="Bulbe">
+    </div>
+
+    <div class="topo-direita">
+      <a class="topo-botao"
+         href="central-de-avisos.html"
+         aria-label="Avisos">
+        <svg viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10.268 21a2 2 0 0 0 3.464 0"/>
+          <path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/>
+        </svg>
+      </a>
+
+      <a class="topo-avatar" href="#" aria-label="Meu perfil">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <circle cx="12" cy="8" r="4.5"/>
+          <path d="M3.5 21a8.5 8.5 0 0 1 17 0Z"/>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- CONTEÚDO HU02 -->
+  <main class="hu02" id="conteudo-principal">
+
+    <div class="hu02__intro">
+      <p class="hu02__eyebrow">Sua comunicação</p>
+
+      <h1>
+        Confirme seus contatos<span class="hu02__period">.</span>
+      </h1>
+
+      <p class="hu02__lead">
+        Confira os dados da sua adesão e escolha como quer
+        receber os próximos avisos da Bulbe.
+      </p>
+
+      <p class="hu02__cliente"
+         id="hu02-cliente"
+         aria-live="polite">
+        Carregando os dados do cliente…
+      </p>
+
+      <p class="hu02__load-error"
+         id="hu02-load-error"
+         role="alert"
+         hidden>
+        Não foi possível carregar os dados do cliente.
+        Abra o projeto pelo Live Server e confira
+        o arquivo data/clientes.json.
+      </p>
+    </div>
+
+    <!-- AVISO INFORMATIVO -->
+    <div class="hu02__notice" role="note">
+      <span class="hu02__notice-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="1.8"
+             stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/>
+          <path d="m9 12 2 2 4-4"/>
+        </svg>
+      </span>
+
+      <div>
+        <strong>Informação no lugar certo.</strong>
+        <p>
+          Com seus contatos em dia, fica mais fácil
+          acompanhar a conexão.
+        </p>
+      </div>
+    </div>
+
+    <!-- CONFIRMAÇÃO -->
+    <section class="hu02__success"
+             id="hu02-success"
+             role="status"
+             aria-live="polite"
+             tabindex="-1"
+             hidden>
+
+      <span class="hu02__success-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2.5"
+             stroke-linecap="round" stroke-linejoin="round">
+          <path d="m5 12 4 4L19 7"/>
+        </svg>
+      </span>
+
+      <div>
+        <h2>Pronto! Contatos confirmados.</h2>
+        <p id="hu02-success-detail"></p>
+
+        <button id="hu02-edit-again" type="button">
+          Editar novamente
+        </button>
+      </div>
+    </section>
+
+    <!-- FORMULÁRIO -->
+    <form id="hu02-form" novalidate>
+
+      <!-- ETAPA 01: DADOS -->
+      <section class="hu02__card"
+               aria-labelledby="hu02-dados-titulo">
+
+        <div class="hu02__section-head">
+          <span class="hu02__step" aria-hidden="true">01</span>
+
+          <div>
+            <h2 id="hu02-dados-titulo">Seus dados</h2>
+            <p>Você pode corrigir as informações abaixo.</p>
+          </div>
+        </div>
+
+        <!-- CELULAR -->
+        <div class="hu02__field">
+          <label for="hu02-celular">Celular com DDD</label>
+
+          <div class="hu02__field-shell">
+            <svg class="hu02__field-icon"
+                 aria-hidden="true"
+                 viewBox="0 0 24 24"
+                 fill="none"
+                 stroke="currentColor"
+                 stroke-width="1.7"
+                 stroke-linecap="round">
+              <rect x="6" y="2" width="12" height="20" rx="2"/>
+              <path d="M11 18h2"/>
+            </svg>
+
+            <input
+              id="hu02-celular"
+              type="tel"
+              name="celular"
+              autocomplete="tel-national"
+              inputmode="tel"
+              placeholder="(31) 99999-9999"
+              maxlength="19"
+              required
+              aria-invalid="false"
+              aria-describedby="hu02-erro-celular"
+            >
+
+            <button class="hu02__edit"
+                    type="button"
+                    data-target="hu02-celular"
+                    aria-label="Editar celular">
+              <svg viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor"
+                   stroke-width="1.8"
+                   stroke-linecap="round"
+                   stroke-linejoin="round">
+                <path d="m15 5 4 4M4 20l4.5-1 11-11a2.5 2.5 0 0 0-3.5-3.5L5 15.5 4 20Z"/>
+              </svg>
+            </button>
+          </div>
+
+          <p class="hu02__error"
+             id="hu02-erro-celular"
+             aria-live="polite"></p>
+        </div>
+
+        <!-- E-MAIL -->
+        <div class="hu02__field">
+          <label for="hu02-email">E-mail</label>
+
+          <div class="hu02__field-shell">
+            <svg class="hu02__field-icon"
+                 aria-hidden="true"
+                 viewBox="0 0 24 24"
+                 fill="none"
+                 stroke="currentColor"
+                 stroke-width="1.7"
+                 stroke-linecap="round"
+                 stroke-linejoin="round">
+              <rect x="2" y="4.5" width="20" height="15" rx="2"/>
+              <path d="m3 6 9 7 9-7"/>
+            </svg>
+
+            <input
+              id="hu02-email"
+              type="email"
+              name="email"
+              inputmode="email"
+              autocomplete="email"
+              autocapitalize="off"
+              spellcheck="false"
+              placeholder="seunome@exemplo.com"
+              maxlength="254"
+              required
+              aria-invalid="false"
+              aria-describedby="hu02-erro-email"
+            >
+
+            <button class="hu02__edit"
+                    type="button"
+                    data-target="hu02-email"
+                    aria-label="Editar e-mail">
+              <svg viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor"
+                   stroke-width="1.8"
+                   stroke-linecap="round"
+                   stroke-linejoin="round">
+                <path d="m15 5 4 4M4 20l4.5-1 11-11a2.5 2.5 0 0 0-3.5-3.5L5 15.5 4 20Z"/>
+              </svg>
+            </button>
+          </div>
+
+          <p class="hu02__error"
+             id="hu02-erro-email"
+             aria-live="polite"></p>
+        </div>
+      </section>
+
+      <!-- ETAPA 02: CANAIS -->
+      <section class="hu02__card"
+               aria-labelledby="hu02-canais-titulo">
+
+        <div class="hu02__section-head">
+          <span class="hu02__step" aria-hidden="true">02</span>
+
+          <div>
+            <h2 id="hu02-canais-titulo">
+              Por onde você prefere receber as atualizações?
+            </h2>
+            <p>Escolha uma das opções.</p>
+          </div>
+        </div>
+
+        <fieldset class="hu02__channels">
+          <legend class="sr-only">
+            Escolha os canais de atualização
+          </legend>
+
+          <!-- WHATSAPP + E-MAIL -->
+          <label class="hu02__option">
+            <input type="radio"
+                   name="preferencia"
+                   value="ambos"
+                   checked>
+
+            <span class="hu02__option-inner">
+              <span class="hu02__option-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor"
+                     stroke-width="1.7"
+                     stroke-linecap="round"
+                     stroke-linejoin="round">
+                  <rect x="2" y="5" width="15" height="12" rx="2"/>
+                  <path d="m2 7 7.5 5L17 7"/>
+                  <path d="M18 11a4 4 0 0 1 2.5 6.9L22 21l-3.2-1.2A4 4 0 0 1 17 12"/>
+                </svg>
+              </span>
+
+              <span class="hu02__option-copy">
+                <span class="hu02__option-title">
+                  WhatsApp + e-mail
+                  <span class="hu02__recommended">
+                    Recomendado
+                  </span>
+                </span>
+
+                <span class="hu02__option-caption">
+                  Quero acompanhar as novidades pelos dois canais.
+                </span>
+              </span>
+
+              <span class="hu02__radio" aria-hidden="true"></span>
+            </span>
+          </label>
+
+          <!-- SOMENTE WHATSAPP -->
+          <label class="hu02__option">
+            <input type="radio"
+                   name="preferencia"
+                   value="whatsapp">
+
+            <span class="hu02__option-inner">
+              <span class="hu02__option-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor"
+                     stroke-width="1.7"
+                     stroke-linecap="round"
+                     stroke-linejoin="round">
+                  <path d="M20 11.5a8 8 0 0 1-12 7L3.5 20l1.5-4.5A8 8 0 1 1 20 11.5Z"/>
+                  <path d="M9 8c.5 3.7 2.6 5.8 6.2 7.2l1.5-1.1"/>
+                </svg>
+              </span>
+
+              <span class="hu02__option-copy">
+                <span class="hu02__option-title">
+                  Somente WhatsApp
+                </span>
+
+                <span class="hu02__option-caption">
+                  Prefiro receber as atualizações por mensagem.
+                </span>
+              </span>
+
+              <span class="hu02__radio" aria-hidden="true"></span>
+            </span>
+          </label>
+
+          <!-- SOMENTE E-MAIL -->
+          <label class="hu02__option">
+            <input type="radio"
+                   name="preferencia"
+                   value="email">
+
+            <span class="hu02__option-inner">
+              <span class="hu02__option-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor"
+                     stroke-width="1.7"
+                     stroke-linecap="round"
+                     stroke-linejoin="round">
+                  <rect x="2" y="5" width="20" height="14" rx="2"/>
+                  <path d="m3 7 9 6 9-6"/>
+                </svg>
+              </span>
+
+              <span class="hu02__option-copy">
+                <span class="hu02__option-title">
+                  Somente e-mail
+                </span>
+
+                <span class="hu02__option-caption">
+                  Prefiro acompanhar as atualizações pela minha caixa de entrada.
+                </span>
+              </span>
+
+              <span class="hu02__radio" aria-hidden="true"></span>
+            </span>
+          </label>
+
+        </fieldset>
+      </section>
+
+      <!-- RODAPÉ DO FORMULÁRIO -->
+      <p class="hu02__footnote">
+        <svg aria-hidden="true" viewBox="0 0 24 24"
+             fill="none" stroke="currentColor"
+             stroke-width="1.7"
+             stroke-linecap="round"
+             stroke-linejoin="round">
+          <rect x="4" y="10" width="16" height="11" rx="2"/>
+          <path d="M8 10V7a4 4 0 0 1 8 0v3"/>
+        </svg>
+
+        <span>
+          Seu contato é importante para receber
+          as atualizações da contratação.
+        </span>
+      </p>
+
+      <p class="hu02__save-error"
+         id="hu02-save-error"
+         role="alert"
+         hidden></p>
+
+      <button class="hu02__save" type="submit" disabled>
+        Salvar e confirmar
+
+        <svg aria-hidden="true" viewBox="0 0 24 24"
+             fill="none" stroke="currentColor"
+             stroke-width="2"
+             stroke-linecap="round"
+             stroke-linejoin="round">
+          <path d="M5 12h14m-6-6 6 6-6 6"/>
+        </svg>
+      </button>
+
+    </form>
+  </main>
+
+  <!-- MENU ORIGINAL DO TEMPLATE -->
+  <nav class="menu" aria-label="Menu principal">
+
+    <a href="acompanhe-sua-energia.html">
+      <span class="menu-icone">
+        <svg viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2"
+             stroke-linejoin="round">
+          <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/>
+        </svg>
+      </span>
+      Energia
+    </a>
+
+    <a href="central-de-avisos.html">
+      <span class="menu-icone">
+        <svg viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2"
+             stroke-linecap="round"
+             stroke-linejoin="round">
+          <path d="M10.268 21a2 2 0 0 0 3.464 0"/>
+          <path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/>
+        </svg>
+      </span>
+      Avisos
+    </a>
+
+    <a href="primeira-fatura.html">
+      <span class="menu-icone">
+        <svg viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2"
+             stroke-linecap="round"
+             stroke-linejoin="round">
+          <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/>
+          <path d="M14 2v4a2 2 0 0 0 2 2h4"/>
+          <path d="M10 9H8M16 13H8M16 17H8"/>
+        </svg>
+      </span>
+      Fatura
+    </a>
+
+    <a class="ativo"
+       href="confirmar-contatos.html"
+       aria-current="page">
+      <span class="menu-icone">
+        <svg viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2"
+             stroke-linecap="round"
+             stroke-linejoin="round">
+          <path d="M2 21a8 8 0 0 1 13.292-6"/>
+          <circle cx="10" cy="8" r="5"/>
+          <path d="m16 19 2 2 4-4"/>
+        </svg>
+      </span>
+      Contatos
+    </a>
+  </nav>
+
+  <script type="module"
+          src="../assets/js/confirmar-contatos.js"></script>
+</body>
+</html>
