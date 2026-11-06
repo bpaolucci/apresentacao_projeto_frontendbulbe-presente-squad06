@@ -1,5 +1,5 @@
 /* =========================================================
-   Apresentação do projeto: um celular por tela
+   Apresentação: 1 celular + carrossel de cards
    Usa as mesmas cores do app (cores.css)
    ========================================================= */
 @import url("assets/css/cores.css");
@@ -21,11 +21,16 @@ body {
   line-height: 1.6;
 }
 
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
 /* ---------- Abertura ---------- */
 .abertura {
   background: var(--cor-azul);
   color: var(--cor-branco);
-  padding: 64px 16px 48px;
+  padding: 64px 16px 56px;
   text-align: center;
 }
 
@@ -80,42 +85,30 @@ body {
   font-size: 14px;
 }
 
-.sumario {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px;
+.abertura-botao {
+  display: inline-block;
   margin-top: 40px;
-}
-
-.sumario a {
-  color: var(--cor-branco);
-  text-decoration: none;
-  font-size: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  border-radius: 999px;
-  padding: 6px 16px;
-}
-
-.sumario a:hover {
   background: var(--cor-branco);
   color: var(--cor-azul);
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 12px 28px;
 }
 
-/* ---------- Uma seção por tela ---------- */
-.tela {
+.abertura-botao:hover {
+  background: var(--cor-verde);
+}
+
+/* ---------- Demonstração: celular + carrossel lado a lado ---------- */
+.demo {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 64px;
   max-width: 1100px;
   margin: 0 auto;
-  padding: 80px 16px;
-}
-
-/* Seções pares: celular do lado direito */
-.tela:nth-child(even) {
-  flex-direction: row-reverse;
+  padding: 72px 16px;
 }
 
 /* ---------- Modelo de celular ---------- */
@@ -149,9 +142,59 @@ body {
   background: var(--cor-branco);
 }
 
-/* ---------- Texto da tela ---------- */
-.tela-info {
-  max-width: 460px;
+/* ---------- Carrossel ---------- */
+.carrossel {
+  width: 100%;
+  max-width: 480px;
+  min-width: 0;
+}
+
+/* Abas HU01...HU05 */
+.carrossel-abas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.carrossel-abas button {
+  background: var(--cor-branco);
+  color: var(--cor-azul);
+  border: 1px solid var(--cor-linha);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.carrossel-abas button:hover {
+  border-color: var(--cor-azul);
+}
+
+.carrossel-abas button.ativa {
+  background: var(--cor-azul);
+  border-color: var(--cor-azul);
+  color: var(--cor-branco);
+}
+
+/* Janela que esconde os cards de fora; o trilho anda para o lado */
+.carrossel-janela {
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.carrossel-trilho {
+  display: flex;
+  transition: transform 0.45s ease;
+}
+
+/* ---------- Card de cada tela ---------- */
+.card {
+  flex: 0 0 100%;
+  background: var(--cor-branco);
+  border: 1px solid var(--cor-linha);
+  border-radius: 20px;
+  padding: 32px;
 }
 
 .tela-id {
@@ -164,16 +207,16 @@ body {
   padding: 4px 14px;
 }
 
-.tela-info h2 {
+.card h2 {
   color: var(--cor-azul);
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 600;
   line-height: 1.25;
   margin: 12px 0 16px;
 }
 
-.tela-info p {
-  font-size: 17px;
+.card p {
+  font-size: 16px;
 }
 
 .destaques {
@@ -195,17 +238,15 @@ body {
   font-weight: 700;
 }
 
-/* ---------- Card do responsável ---------- */
+/* Card do responsável */
 .responsavel {
   display: flex;
   align-items: center;
   gap: 16px;
-  background: var(--cor-branco);
-  border: 1px solid var(--cor-linha);
+  background: #f5f6fb;
   border-left: 5px solid var(--cor-verde);
   border-radius: var(--raio-card);
   padding: 16px 20px;
-  box-shadow: 0 8px 20px rgba(8, 6, 141, 0.06);
 }
 
 .responsavel-foto {
@@ -241,22 +282,60 @@ body {
   color: var(--cor-texto-secundario);
 }
 
+/* Setas e contador */
+.carrossel-controles {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 20px;
+}
+
+.seta {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 0;
+  background: var(--cor-azul);
+  color: var(--cor-branco);
+  font-size: 28px;
+  line-height: 1;
+}
+
+.seta:hover {
+  background: var(--cor-verde);
+  color: var(--cor-azul);
+}
+
+.contador {
+  font-weight: 600;
+  color: var(--cor-azul);
+  min-width: 48px;
+  text-align: center;
+}
+
+.dica {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--cor-texto-secundario);
+}
+
 /* ---------- Rodapé ---------- */
 .rodape {
   text-align: center;
-  padding: 40px 16px;
+  padding: 32px 16px;
   font-size: 14px;
   color: var(--cor-texto-secundario);
   border-top: 1px solid var(--cor-linha);
 }
 
-/* ---------- Telas menores: texto embaixo do celular ---------- */
+/* ---------- Telas menores: carrossel embaixo do celular ---------- */
 @media (max-width: 900px) {
-  .tela,
-  .tela:nth-child(even) {
+  .demo {
     flex-direction: column;
     gap: 32px;
-    padding: 56px 16px;
+    padding: 48px 16px;
   }
 
   .abertura h1 {
@@ -274,5 +353,16 @@ body {
 
   .celular iframe {
     border-radius: 8px 8px 32px 32px;
+  }
+
+  .card {
+    padding: 24px 20px;
+  }
+}
+
+/* Sem animação para quem pede menos movimento */
+@media (prefers-reduced-motion: reduce) {
+  .carrossel-trilho {
+    transition: none;
   }
 }
