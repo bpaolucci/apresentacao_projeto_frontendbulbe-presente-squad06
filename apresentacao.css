@@ -314,13 +314,6 @@ button {
   text-align: center;
 }
 
-.dica {
-  margin-top: 16px;
-  text-align: center;
-  font-size: 13px;
-  color: var(--cor-texto-secundario);
-}
-
 /* ---------- Rodapé ---------- */
 .rodape {
   text-align: center;
