@@ -119,7 +119,7 @@
             <tr><td><strong>HU02</strong><small>Laura</small></td><td>Confirmar ou corrigir meus contatos e escolher os canais de atualização.</td><td>“Meus contatos estão certos?”</td><td>Entregabilidade</td></tr>
             <tr><td><strong>HU03</strong><small>Daniel</small></td><td>Ver num só lugar as mensagens da Bulbe e o que depende de mim.</td><td>“Preciso fazer algo?”</td><td>Entregabilidade</td></tr>
             <tr><td><strong>HU04</strong><small>Bernardo</small></td><td>Ver em que ponto está a adesão, da usina até a minha casa, e quanto vou economizar.</td><td>“Em que etapa estou?”</td><td>Churn no 1º mês</td></tr>
-            <tr><td><strong>HU05</strong><small>Maria Cecília</small></td><td>Entender como vai funcionar a 1ª fatura e a relação entre as contas da Cemig e da Bulbe.</td><td>“Qual conta eu pago?”</td><td>Pagamento da 1ª fatura</td></tr>
+            <tr><td><strong>HU05</strong><small>Maria Cecília</small></td><td>Entender como vai funcionar a 1ª fatura e a relação entre as contas da Cemig e da Bulbe.</td><td>“Por que recebo duas contas?”</td><td>Pagamento da 1ª fatura</td></tr>
           </tbody>
         </table>
       </section>
@@ -148,7 +148,7 @@
             <li><span class="tela-id">HU02</span><strong>“Meus contatos estão certos?”</strong><small>Sem contato válido, nenhuma mensagem chega.</small></li>
             <li><span class="tela-id">HU03</span><strong>“Preciso fazer algo?”</strong><small>Pendências no topo; o que o WhatsApp não entregou fica guardado.</small></li>
             <li><span class="tela-id">HU04</span><strong>“Em que etapa estou e quanto vou economizar?”</strong><small>O caminho da energia vira indicador de etapa.</small></li>
-            <li class="pendente"><span class="tela-id">HU05</span><strong>“Qual conta eu pago?”</strong><small>Em breve.</small></li>
+            <li><span class="tela-id">HU05</span><strong>“Por que recebo duas contas? Qual eu pago?”</strong><small>Informação em pílulas: uma dúvida por vez, sem sobrecarregar.</small></li>
           </ol>
         </div>
       </section>
@@ -189,9 +189,12 @@
             <h4>Alternativas → escolha</h4>
             <p>Anel “2/4” do app × <strong>caminho da energia</strong>; linha do tempo aberta × <strong>card só com a etapa atual</strong>.</p>
           </article>
-          <article class="card-hu pendente">
+          <article class="card-hu">
             <span class="tela-id">HU05</span>
-            <p>Em breve.</p>
+            <h4>Ideias</h4>
+            <p>Página longa com rolagem, abas, acordeões, assistente passo a passo.</p>
+            <h4>Crazy 8’s → escolha</h4>
+            <p>Venceu a <strong>central com cards</strong>: cada card leva a uma dúvida; a página única foi descartada.</p>
           </article>
         </div>
 
@@ -206,16 +209,16 @@
 
         <table class="tabela matriz">
           <thead>
-            <tr><th></th><th>HU01 · Boas-vindas</th><th>HU02 · Contatos</th><th>HU03 · Avisos</th><th>HU04 · Energia</th></tr>
+            <tr><th></th><th>HU01 · Boas-vindas</th><th>HU02 · Contatos</th><th>HU03 · Avisos</th><th>HU04 · Energia</th><th>HU05 · 1ª fatura</th></tr>
           </thead>
           <tbody>
-            <tr><th>S</th><td>Blocos de texto → cards expansíveis</td><td>Dados só da contratação → cliente confere e corrige</td><td>Só WhatsApp → central dentro do app</td><td>Anel “2/4” → caminho usina → casa</td></tr>
-            <tr><th>C</th><td>Informações relacionadas numa tela contínua</td><td>Dados e canais numa tela</td><td>Avisos + pendências + resumo em números</td><td>Caminho + etapa atual num bloco</td></tr>
-            <tr><th>A</th><td class="vazio">—</td><td>Padrões de apps de banco</td><td>Central de notificações de apps</td><td>Cabeçalho, menu e cores do app atual</td></tr>
-            <tr><th>M</th><td class="vazio">—</td><td>Cliente escolhe o canal</td><td>Pendência em laranja com prazo</td><td>“Até 60 dias” → data prevista</td></tr>
-            <tr><th>P</th><td class="vazio">—</td><td>Contatos também no perfil</td><td>Sininho vira atalho em todas as telas</td><td>Animação vira indicador de etapa</td></tr>
-            <tr><th>E</th><td class="vazio">—</td><td>Atrito para corrigir dados</td><td>Botões do mockup sem critério de aceite</td><td>“Precisa fazer algo?” em cada etapa</td></tr>
-            <tr><th>R</th><td>Essencial primeiro, detalhe sob demanda</td><td>Dados → canais → confirmação</td><td>Pendências antes dos avisos</td><td>Aviso da Cemig e “Atualizado em” no topo</td></tr>
+            <tr><th>S</th><td>Blocos de texto → cards expansíveis</td><td>Dados só da contratação → cliente confere e corrige</td><td>Só WhatsApp → central dentro do app</td><td>Anel “2/4” → caminho usina → casa</td><td>Texto contínuo → cards por assunto</td></tr>
+            <tr><th>C</th><td>Informações relacionadas numa tela contínua</td><td>Dados e canais numa tela</td><td>Avisos + pendências + resumo em números</td><td>Caminho + etapa atual num bloco</td><td>Resumo visual + explicação sob demanda</td></tr>
+            <tr><th>A</th><td class="vazio">—</td><td>Padrões de apps de banco</td><td>Central de notificações de apps</td><td>Cabeçalho, menu e cores do app atual</td><td>Boas-vindas só no 1º acesso</td></tr>
+            <tr><th>M</th><td class="vazio">—</td><td>Cliente escolhe o canal</td><td>Pendência em laranja com prazo</td><td>“Até 60 dias” → data prevista</td><td>Botão de voltar no rodapé → seta no topo</td></tr>
+            <tr><th>P</th><td class="vazio">—</td><td>Contatos também no perfil</td><td>Sininho vira atalho em todas as telas</td><td>Animação vira indicador de etapa</td><td class="vazio">—</td></tr>
+            <tr><th>E</th><td class="vazio">—</td><td>Atrito para corrigir dados</td><td>Botões do mockup sem critério de aceite</td><td>“Precisa fazer algo?” em cada etapa</td><td>Blocos densos de informação</td></tr>
+            <tr><th>R</th><td>Essencial primeiro, detalhe sob demanda</td><td>Dados → canais → confirmação</td><td>Pendências antes dos avisos</td><td>Aviso da Cemig e “Atualizado em” no topo</td><td>Introdução temporária e central fixa</td></tr>
           </tbody>
         </table>
       </section>
@@ -226,7 +229,7 @@
           <h2>Uso de IA: prompts e resultados</h2>
         </header>
 
-        <div class="grade4">
+        <div class="grade4 grade4-5">
           <article class="card-ia">
             <span class="tela-id">HU01</span>
             <h4>ChatGPT + Figma Maker</h4>
@@ -250,6 +253,12 @@
             <h4>Claude + Figma</h4>
             <p class="citacao">“O professor disse que está muito grande e com muito texto. Deixe um card mostrando só a etapa atual e uma seta para expandir.”</p>
             <p class="resultado"><b>Resultado:</b> trilha compacta e textos resumidos (V3).</p>
+          </article>
+          <article class="card-ia">
+            <span class="tela-id">HU05</span>
+            <h4>Claude + Gemini</h4>
+            <p class="citacao">“Explique a diferença entre a distribuidora (Cemig) e a Bulbe para um cliente leigo. Use frases simples e tom acolhedor.”</p>
+            <p class="resultado"><b>Resultado:</b> textos curtos; o Gemini ajudou a mostrar as boas-vindas só no 1º acesso.</p>
           </article>
         </div>
 
@@ -324,10 +333,19 @@
         </div>
       </section>
 
-      <section class="slide slide-centro slide-pendente" data-secao="evolucao">
-        <span class="rotulo">Evolução · Maria Cecília</span>
-        <h2>HU05 · Entenda sua primeira fatura</h2>
-        <p class="aguardando">Em breve.</p>
+      <section class="slide" data-secao="evolucao">
+        <header class="slide-topo slide-topo-linha">
+          <div>
+            <span class="rotulo">Evolução · Maria Cecília</span>
+            <h2>HU05 · Entenda sua primeira fatura</h2>
+          </div>
+        </header>
+        <div class="faixa">
+          <figure><button type="button" class="tela" data-ampliar="assets/img/design/hu05/v1-pagina-unica.jpg"><img src="assets/img/design/hu05/v1-pagina-unica.jpg" alt="Primeira versão da HU05 em página única com rolagem"></button><figcaption><b>V1 · Página única</b>Tudo numa rolagem só</figcaption></figure>
+          <figure class="larga larga-mais"><button type="button" class="tela" data-ampliar="assets/img/design/hu05/v2-hub-cards.jpg" data-largo><img src="assets/img/design/hu05/v2-hub-cards.jpg" alt="Segunda versão da HU05: central com cards e telas de cada assunto"></button><figcaption><b>V2 · Central com cards</b>Uma dúvida por tela</figcaption></figure>
+          <figure class="inteira"><button type="button" class="tela" data-ampliar="assets/img/design/hu05/final-boasvindas.jpg"><img src="assets/img/design/hu05/final-boasvindas.jpg" alt="Boas-vindas da primeira fatura, mostrada só no primeiro acesso"></button><figcaption><b>V3 · Boas-vindas</b>Só no 1º acesso</figcaption></figure>
+          <figure><button type="button" class="tela" data-ampliar="assets/img/design/hu05/final-contas.jpg"><img src="assets/img/design/hu05/final-contas.jpg" alt="Tela Qual conta devo pagar agora, com a seta de voltar no topo"></button><figcaption><b>V4 · Final</b>Seta de voltar no topo</figcaption></figure>
+        </div>
       </section>
 
       <!-- ================= 14. TELAS FINAIS ================= -->
@@ -340,7 +358,7 @@
           <figure><button type="button" class="tela" data-ampliar="assets/img/design/hu02/v3-final.jpg"><img src="assets/img/design/hu02/v3-final.jpg" alt="HU02 final"></button><figcaption>HU02 · Contatos</figcaption></figure>
           <figure><button type="button" class="tela" data-ampliar="assets/img/design/hu03/final-pendencia.jpg"><img src="assets/img/design/hu03/final-pendencia.jpg" alt="HU03 final"></button><figcaption>HU03 · Avisos</figcaption></figure>
           <figure><button type="button" class="tela" data-ampliar="assets/img/design/hu04/v5-em-conexao.jpg"><img src="assets/img/design/hu04/v5-em-conexao.jpg" alt="HU04 final"></button><figcaption>HU04 · Energia</figcaption></figure>
-          <figure class="sem-tela"><span>Em breve</span><figcaption>HU05 · 1ª fatura</figcaption></figure>
+          <figure><button type="button" class="tela" data-ampliar="assets/img/design/hu05/final-central.jpg"><img src="assets/img/design/hu05/final-central.jpg" alt="HU05 final: central de orientações"></button><figcaption>HU05 · 1ª fatura</figcaption></figure>
         </div>
         <p class="dica-ampliar">Clique numa tela para vê-la inteira.</p>
       </section>
@@ -404,7 +422,7 @@
           <div class="no no-principal"><small>tela principal</small><strong>HU04 · Energia</strong><span>etapa e economia</span></div>
           <div class="ramos">
             <div class="no"><small>sininho</small><strong>HU03 · Avisos</strong></div>
-            <div class="no"><small>menu · Fatura</small><strong>HU05 · 1ª fatura</strong></div>
+            <div class="no"><small>menu · Fatura</small><strong>HU05 · 1ª fatura</strong><span>boas-vindas só na 1ª vez, depois a central</span></div>
             <div class="no"><small>menu · Contatos</small><strong>HU02 · Contatos</strong></div>
           </div>
         </div>
@@ -412,7 +430,7 @@
         <div class="cards-tres principios">
           <div class="bloco"><h4>1. O que pede ação vem primeiro</h4><p>Pendências (HU03), leitura obrigatória (HU01) e “Continue pagando a Cemig” (HU04) ficam no topo.</p></div>
           <div class="bloco"><h4>2. A resposta antes da leitura</h4><p>“Etapa 3 de 4”, resumo em números, “Você não precisa fazer nada”.</p></div>
-          <div class="bloco"><h4>3. Detalhe sob demanda</h4><p>Cards expansíveis, “Ver todas as etapas” e aviso que abre ao tocar.</p></div>
+          <div class="bloco"><h4>3. Detalhe sob demanda</h4><p>Cards expansíveis, “Ver todas as etapas”, aviso que abre ao tocar e central de dúvidas da fatura.</p></div>
         </div>
       </section>
 
@@ -435,6 +453,7 @@
               <tr><td><i style="background:#1e7a45"></i> “Pagar normalmente”</td><td>HU01</td><td class="ruim">3,43:1</td><td>5,35:1</td><td><span class="sim">Passa</span></td></tr>
               <tr><td><i style="background:#8a4b00"></i> Texto da pendência</td><td>HU03</td><td class="ruim">1,93:1</td><td>6,35:1</td><td><span class="sim">Passa</span></td></tr>
               <tr><td><i style="background:#61718a"></i> Texto dentro do campo</td><td>HU02</td><td>—</td><td>4,83:1</td><td><span class="sim">Passa</span></td></tr>
+              <tr><td><i style="background:#e0e7ff"></i> Texto claro no fundo azul</td><td>HU05</td><td>—</td><td>8,23:1</td><td><span class="sim">AAA</span></td></tr>
               <tr><td><i style="background:#3e4d5b"></i> Texto principal</td><td>Todas</td><td>—</td><td>8,69:1</td><td><span class="sim">AAA</span></td></tr>
               <tr><td><i style="background:#08068d"></i> Branco no azul (cabeçalho e botões)</td><td>Todas</td><td>—</td><td>14,78:1</td><td><span class="sim">AAA</span></td></tr>
             </tbody>
@@ -448,6 +467,8 @@
               <li><span>Borda da opção não marcada</span><b>HU02 · 2,17</b></li>
               <li><span>“Aguardar orientação”</span><b>HU01 · 3,05</b></li>
               <li><span>Nota “Cobranças separadas…”</span><b>HU01 · 4,17</b></li>
+              <li><span>Rótulo verde “Orientação principal”</span><b>HU05 · 4,21</b></li>
+              <li><span>Ícone amarelo do card</span><b>HU05 · 1,81</b></li>
             </ul>
           </div>
         </div>
@@ -464,7 +485,7 @@
 
         <div class="proximos">
           <div><strong>Testar com clientes</strong><span>A Helena e o Fernando entendem a etapa e qual conta pagar sem ajuda?</span></div>
-          <div><strong>Fechar o contraste</strong><span>Verde dos ícones de etapa e de sucesso, bordas das opções e cinzas da HU01.</span></div>
+          <div><strong>Fechar o contraste</strong><span>Verde dos ícones, bordas das opções, cinzas da HU01 e rótulos da HU05.</span></div>
           <div><strong>Dados reais</strong><span>Status da adesão, avisos e contatos integrados aos sistemas da Bulbe.</span></div>
           <div><strong>Ideação antes do desenho</strong><span>Crazy 8’s e SCAMPER no começo da sprint, não depois.</span></div>
         </div>

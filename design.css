@@ -1520,7 +1520,15 @@ figcaption {
 }
 
 .grade5 {
-  grid-template-columns: repeat(4, 1fr) 0.55fr;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.grade4.grade4-5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.grade4-5 .citacao {
+  font-size: 16px;
 }
 
 .grade4 {
@@ -1618,7 +1626,7 @@ figcaption {
 
 /* Matriz SCAMPER */
 .matriz {
-  font-size: 17px;
+  font-size: 15px;
 }
 
 .matriz th,
@@ -1897,4 +1905,10 @@ figcaption {
   .tela {
     transition: none;
   }
+}
+
+/* Tela mostrada inteira (sem cortar as laterais) */
+.faixa figure.inteira .tela img {
+  object-fit: contain;
+  object-position: top;
 }
