@@ -6,138 +6,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Entenda sua primeira fatura · Bulbe</title>
 
-    <!-- Fonte Poppins (a mesma do app) -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    <!-- Cabeçalho e menu -->
+    <!-- Importando os CSS necessários -->
+    <link rel="stylesheet" href="../assets/css/hu01.css">
     <link rel="stylesheet" href="../assets/css/bulbe-ui.css">
     <link rel="stylesheet" href="../assets/css/primeira-fatura.css">
-  <script type="module" src="../assets/js/app.js"></script>
+    <script type="module" src="../assets/js/app.js"></script>
 </head>
 
 <body>
 
-    <!-- ================= CABEÇALHO (não mexer) ================= -->
-    <header class="topo">
-        <a class="topo-botao" href="../escolher-cliente.html" aria-label="Voltar para a escolha de cliente">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                <path d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-        </a>
+    <div id="container">
+        <!-- Cabeçalho temporário (Template do colega) -->
+        <header id="header">
+            <img src="../assets/img/logo-bulbe.png" alt="Bulbe">
+            <h1>Primeira Fatura</h1>
+        </header>
 
-        <div class="topo-logo">
-            <img src="../assets/img/logo-bulbe-branco.svg" alt="Bulbe">
-        </div>
+        <main id="main">
+            <div class="conteudo">
 
-        <div class="topo-direita">
-            <a class="topo-botao" href="central-de-avisos.html" aria-label="Avisos">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <path d="M10.268 21a2 2 0 0 0 3.464 0" />
-                    <path
-                        d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326" />
-                </svg>
-            </a>
-            <a class="topo-avatar" href="#" aria-label="Meu perfil">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                    <circle cx="12" cy="8" r="4.5" />
-                    <path d="M3.5 21a8.5 8.5 0 0 1 17 0Z" />
-                </svg>
-            </a>
-        </div>
-    </header>
+                <!-- Seu conteúdo original -->
+                <section class="tela-destaque-azul" aria-labelledby="titulo-boas-vindas">
+                    <div class="decoracao-riscos" aria-hidden="true">
+                        <span class="risco verde"></span>
+                        <span class="risco azul"></span>
+                        <span class="risco laranja"></span>
+                    </div>
 
+                    <span class="badge-boas-vindas">Entenda sua primeira fatura</span>
 
-    <!-- ================= CONTEÚDO DA SUA TELA ================= -->
-    <main>
+                    <h1 id="titulo-boas-vindas" class="titulo-destaque">
+                        Vamos entender<br>
+                        sua primeira fatura?
+                    </h1>
 
-        <section class="tela-destaque-azul" aria-labelledby="titulo-boas-vindas">
+                    <p class="texto-destaque">
+                        Sabemos que esse momento pode gerar dúvidas. Aqui, você encontra explicações simples e pode
+                        consultar um assunto de cada vez.
+                    </p>
 
-            <!-- Elementos decorativos do topo -->
-            <div class="decoracao-riscos" aria-hidden="true">
-                <span class="risco verde"></span>
-                <span class="risco azul"></span>
-                <span class="risco laranja"></span>
+                    <div class="cartao-info-azul">
+                        <span class="cartao-info-icone" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </span>
+                        <span class="cartao-info-texto">
+                            <h2>Você não precisa entender tudo de uma vez.</h2>
+                            <p>Vamos explicar com calma e em palavras simples.</p>
+                        </span>
+                    </div>
+
+                    <a href="central-orientacoes.html" class="botao-amarelo" id="btn-iniciar-fatura">
+                        Iniciar
+                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m9 18 6-6-6-6" />
+                        </svg>
+                    </a>
+                </section>
+
             </div>
-
-            <span class="badge-boas-vindas">Entenda sua primeira fatura</span>
-
-            <h1 id="titulo-boas-vindas" class="titulo-destaque">
-                Vamos entender<br>
-                sua primeira fatura?
-            </h1>
-
-            <p class="texto-destaque">
-                Sabemos que esse momento pode gerar dúvidas. Aqui, você encontra explicações simples e pode consultar um
-                assunto de cada vez.
-            </p>
-
-            <div class="cartao-info-azul">
-                <span class="cartao-info-icone" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                </span>
-                <span class="cartao-info-texto">
-                    <h2>Você não precisa entender tudo de uma vez.</h2>
-                    <p>Vamos explicar com calma e em palavras simples.</p>
-                </span>
-            </div>
-
-            <a href="central-orientacoes.html" class="botao-amarelo">
-                Iniciar
-                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path d="m9 18 6-6-6-6" />
-                </svg>
-            </a>
-
-        </section>
-
-    </main>
-
-
-    <!-- ================= MENU DE BAIXO ================= -->
-    <!-- Coloque class="ativo" no link da sua tela (e tire do link de Energia) -->
-    <nav class="menu" aria-label="Menu principal">
-        <a href="acompanhe-sua-energia.html">
-            <span class="menu-icone">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
-                    <path
-                        d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z" />
-                </svg>
-            </span>
-            Energia
-        </a>
-
-        <a class="ativo" href="primeira-fatura.html">
-            <span class="menu-icone">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
-                    <path d="M14 2v4a2 2 0 0 0 2 2h4" />
-                    <path d="M10 9H8M16 13H8M16 17H8" />
-                </svg>
-            </span>
-            Fatura
-        </a>
-
-        <a href="confirmar-contatos.html">
-            <span class="menu-icone">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <path d="M2 21a8 8 0 0 1 13.292-6" />
-                    <circle cx="10" cy="8" r="5" />
-                    <path d="m16 19 2 2 4-4" />
-                </svg>
-            </span>
-            Contatos
-        </a>
-    </nav>
+        </main>
+    </div>
 
     <script src="../assets/js/primeira-fatura.js"></script>
-
 </body>
 
 </html>

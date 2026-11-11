@@ -129,4 +129,29 @@ async function mostrarSino() {
   }
 }
 
+// ---------- 4. Regra de navegação: Tela Primeira Fatura ----------
+// Intercepta o clique no ícone "Fatura" do menu inferior.
+// Se a pessoa já passou pela introdução, manda direto para a central.
+document.addEventListener('DOMContentLoaded', () => {
+  // Pega qualquer link que vá para a primeira fatura (como o do menu inferior)
+  const linksFatura = document.querySelectorAll('a[href^="primeira-fatura.html"]');
+
+  linksFatura.forEach(link => {
+    link.addEventListener('click', (evento) => {
+      try {
+        if (localStorage.getItem('primeiraFaturaVista') === 'true') {
+          evento.preventDefault(); // Cancela a ida para a tela azul
+
+          // Vai para a tela definitiva repassando o ID do cliente atual na URL
+          const url = new URL('central-orientacoes.html', window.location.href);
+          url.search = window.location.search;
+          window.location.href = url.toString();
+        }
+      } catch (erro) {
+        // Se der erro no localStorage, deixa o link seguir normalmente
+      }
+    });
+  });
+});
+
 mostrarSino();

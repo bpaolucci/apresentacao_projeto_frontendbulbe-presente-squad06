@@ -282,3 +282,94 @@ body { font-family: var(--fonte); background-color: var(--cor-branco); color: va
 
     .cartao { padding: 12px; }
 }
+
+.cartao-expansivel {
+    padding: 0;
+}
+
+.cartao-expansivel > .resumo-cartao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    cursor: pointer;
+    list-style: none;
+}
+
+.resumo-cartao::-webkit-details-marker,
+.resumo-faturas::-webkit-details-marker {
+    display: none;
+}
+
+.resumo-textos {
+    display: block;
+    min-width: 0;
+}
+
+.resumo-titulo {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--cor-azul);
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.resumo-cartao .subtitulo {
+    display: block;
+    margin-bottom: 0;
+    font-size: 13px;
+    line-height: 1.45;
+}
+
+.resumo-seta {
+    color: var(--cor-azul);
+    font-size: 19px;
+}
+
+.cartao-expansivel[open] .resumo-seta,
+.faturas-expansiveis[open] .resumo-faturas span {
+    transform: rotate(180deg);
+}
+
+.etapas-conteudo {
+    padding: 0 16px 16px;
+}
+
+.etapas-conteudo .etapas {
+    margin-top: 0;
+}
+
+.faturas-expansiveis {
+    margin-bottom: 12px;
+}
+
+.resumo-faturas {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px 12px;
+    background-color: white;
+    color: var(--cor-azul);
+    border: 1px solid #e6ebf6;
+    border-radius: var(--raio-card);
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.faturas-expansiveis[open] .resumo-faturas {
+    margin-bottom: 12px;
+}
+
+.resumo-faturas span {
+    display: inline-block;
+    font-size: 16px;
+}
+
+.resumo-cartao:focus-visible,
+.resumo-faturas:focus-visible {
+    outline: 2px solid var(--cor-azul);
+    outline-offset: 2px;
+}

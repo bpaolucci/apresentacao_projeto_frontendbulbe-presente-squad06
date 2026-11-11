@@ -23,6 +23,16 @@ function mostrarCard(indice, abrirTela) {
   cards.forEach((card, i) => card.setAttribute('aria-hidden', i !== atual));
 
   if (abrirTela) {
+    // A primeira fatura só aparece uma vez no app (depois vai direto para a central).
+    // Na apresentação, o card da HU05 sempre mostra a tela de introdução.
+    if (cards[atual].dataset.tela.endsWith('primeira-fatura.html')) {
+      try {
+        localStorage.removeItem('primeiraFaturaVista');
+      } catch {
+        // sem localStorage, a tela abre normalmente
+      }
+    }
+
     tela.src = cards[atual].dataset.tela + '?cliente=1';
   }
 }

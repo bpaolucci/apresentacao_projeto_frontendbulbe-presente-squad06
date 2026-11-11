@@ -37,3 +37,22 @@ document.addEventListener('DOMContentLoaded', () => {
         radioConfirmada.addEventListener('change', atualizarTela);
     }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Procura o botão "Iniciar" na página atual.
+    // Isso garante que o código a seguir SÓ rode na tela de "Primeira Fatura".
+    const btnIniciar = document.getElementById('btn-iniciar-fatura');
+
+    if (btnIniciar) {
+        // 1. Verifica se o usuário já passou por esta tela
+        if (localStorage.getItem('primeiraFaturaVista') === 'true') {
+            window.location.replace('central-orientacoes.html');
+            return;
+        }
+
+        // 2. Lógica para marcar que a tela foi vista quando clicar em "Iniciar"
+        btnIniciar.addEventListener('click', () => {
+            localStorage.setItem('primeiraFaturaVista', 'true');
+        });
+    }
+});

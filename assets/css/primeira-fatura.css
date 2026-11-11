@@ -428,10 +428,14 @@ body {
 
 /* --- COMPONENTES ESPECÍFICOS --- */
 .tela-destaque-azul {
-    margin: -24px -20px -110px -20px;
-    padding: 32px 20px 130px 20px;
+    /* A margem negativa de -16px anula o padding branco do #main, colando o azul nas bordas */
+    margin: -16px;
+    padding: 32px 20px;
     background: linear-gradient(180deg, #08068d 0%, #161ccc 45%, #08068d 100%);
-    min-height: calc(100vh - 64px);
+    /* Ocupa exatamente a altura da tela, descontando os 56px do novo cabeçalho branco */
+    min-height: calc(100vh - 56px);
+    /* Zero na borda para remover o efeito de "cartão" arredondado */
+    border-radius: 0;
     color: var(--cor-branco);
     position: relative;
     overflow: hidden;
@@ -796,6 +800,48 @@ details[open] .icone-menos {
     color: var(--cor-texto-secundario);
     margin: 0 0 20px 0;
     line-height: 1.4;
+}
+
+/* --- CABEÇALHO COM SETA E TEXTO --- */
+.cabecalho-com-seta {
+    position: relative;
+    /* Serve de âncora para a seta não fugir */
+    display: flex;
+    width: 100%;
+}
+
+.seta-voltar-preta {
+    position: absolute;
+    left: -4px;
+    /* Ajuste fino para alinhar perfeitamente à esquerda */
+    top: -2px;
+    /* Alinha a altura da seta com o topo do texto (badge) */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+    padding: 4px;
+    /* Área de clique maior para o dedo */
+    text-decoration: none;
+    transition: transform 0.2s;
+    z-index: 10;
+    /* Garante que a seta fique clicável por cima de tudo */
+}
+
+.seta-voltar-preta:active {
+    transform: scale(0.90);
+}
+
+.seta-voltar-preta svg {
+    width: 28px;
+    height: 28px;
+}
+
+/* Protege o texto para não encostar na seta em celulares menores */
+.cabecalho-com-seta .cabecalho-centralizado {
+    width: 100%;
+    padding: 0 40px;
+    margin-bottom: 24px;
 }
 
 .oculto {

@@ -12,7 +12,7 @@
     <!-- Cabeçalho e menu -->
     <link rel="stylesheet" href="../assets/css/bulbe-ui.css">
     <link rel="stylesheet" href="../assets/css/primeira-fatura.css">
-  <script type="module" src="../assets/js/app.js"></script>
+    <script type="module" src="../assets/js/app.js"></script>
 </head>
 
 <body>
@@ -53,11 +53,20 @@
 
         <section class="secao-receber-fatura" aria-labelledby="titulo-receber">
 
-            <div class="cabecalho-centralizado">
-                <span class="badge-azul">Onde procurar</span>
-                <h1 id="titulo-receber" class="titulo-escuro">Como vou receber minha primeira fatura?</h1>
-                <p class="texto-explicativo">A Bulbe utiliza canais digitais, como WhatsApp e e-mail, para enviar
-                    comunicações e informações sobre a cobrança.</p>
+            <!-- CABEÇALHO COM SETA E TEXTO CENTRALIZADO -->
+            <div class="cabecalho-com-seta">
+                <a href="central-orientacoes.html" class="seta-voltar-preta" aria-label="Voltar para orientações">
+                    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m15 18-6-6 6-6" />
+                    </svg>
+                </a>
+                <div class="cabecalho-centralizado">
+                    <span class="badge-azul">Onde procurar</span>
+                    <h1 id="titulo-receber" class="titulo-escuro">Como vou receber minha primeira fatura?</h1>
+                    <p class="texto-explicativo">A Bulbe utiliza canais digitais, como WhatsApp e e-mail, para enviar
+                        comunicações e informações sobre a cobrança.</p>
+                </div>
             </div>
 
             <ul class="lista-canais">
@@ -141,15 +150,6 @@
                         mensagens.</p>
                 </div>
             </aside>
-
-            <!-- Botão Voltar -->
-            <a href="central-orientacoes.html" class="botao-voltar-azul">
-                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path d="m15 18-6-6 6-6" />
-                </svg>
-                Voltar para o menu
-            </a>
 
         </section>
 
