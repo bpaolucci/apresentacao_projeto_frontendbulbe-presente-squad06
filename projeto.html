@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Apresentação · Bulbe Presente</title>
+
+  <!-- Fonte Poppins (a mesma do app) -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="apresentacao.css">
+  <link rel="icon" type="image/png" href="assets/img/bulbe_logo.png">
+  <script src="apresentacao.js" defer></script>
+</head>
+<body>
+
+  <!-- ================= ABERTURA ================= -->
+  <header class="abertura">
+    <a class="voltar-menu" href="index.html">← Menu</a>
+    <img class="abertura-logo" src="assets/img/logo-bulbe-branco.svg" alt="Bulbe">
+    <p class="abertura-etiqueta">Projeto Front End · Ibmec BH · Turma A · Squad 06</p>
+    <h1>Bulbe Presente</h1>
+    <p class="abertura-texto">
+      Um protótipo do app da Bulbe que acompanha o cliente entre a adesão e a primeira fatura,
+      para que ele encontre no app tudo o que precisa saber, mesmo quando uma mensagem de WhatsApp não chega.
+    </p>
+
+    <ul class="numeros">
+      <li><strong>20 dias</strong><span>sem comunicação no onboarding (caso observado)</span></li>
+      <li><strong>~20%</strong><span>das mensagens de WhatsApp falham</span></li>
+      <li><strong>32,4%</strong><span>de inadimplência na 1ª fatura</span></li>
+    </ul>
+
+    <a class="abertura-botao" href="#demo">Ver as telas</a>
+  </header>
+
+  <!-- ================= DEMONSTRAÇÃO: 1 celular + carrossel ================= -->
+  <main class="demo" id="demo">
+
+    <!-- Celular: mostra a tela do card atual e pode ser navegado -->
+    <div class="celular">
+      <div class="celular-entalhe"></div>
+      <iframe id="celular-tela" src="pages/hu01.html?cliente=1" title="Tela do app Bulbe Presente"></iframe>
+    </div>
+
+    <!-- Carrossel: um card por tela -->
+    <section class="carrossel" aria-label="Telas do app">
+
+      <!-- Abas com as telas (atalho direto para cada uma) -->
+      <nav class="carrossel-abas" aria-label="Escolher tela">
+        <button type="button" data-ir="0">HU01</button>
+        <button type="button" data-ir="1">HU02</button>
+        <button type="button" data-ir="2">HU03</button>
+        <button type="button" data-ir="3">HU04</button>
+        <button type="button" data-ir="4">HU05</button>
+      </nav>
+
+      <div class="carrossel-janela">
+        <div class="carrossel-trilho" id="carrossel-trilho">
+
+          <!-- HU01 -->
+          <article class="card" data-tela="pages/hu01.html" data-arquivos="hu01.html">
+            <span class="tela-id">HU01</span>
+            <h2>Boas-vindas pós-adesão</h2>
+            <p>
+              É a primeira tela que o cliente vê depois de contratar. Ela confirma que a adesão foi recebida
+              (sem dizer que o serviço já está ativo), explica as próximas etapas em linguagem simples e
+              orienta a continuar pagando a Cemig até a conexão.
+            </p>
+            <ul class="destaques">
+              <li>Seção “Por que posso receber duas contas de luz?”</li>
+              <li>Confirmação de leitura no final antes de continuar</li>
+              <li>Leva para a HU02 e dá acesso às outras telas</li>
+            </ul>
+            <div class="responsavel">
+              <span class="responsavel-foto">Y</span>
+              <div>
+                <small>Responsável pela tela</small>
+                <strong>Ygor</strong>
+                <span>@bygor840</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- HU02 -->
+          <article class="card" data-tela="pages/confirmar-contatos.html" data-arquivos="confirmar-contatos.html">
+            <span class="tela-id">HU02</span>
+            <h2>Confirme seus contatos</h2>
+            <p>
+              Como cerca de 20% das mensagens de WhatsApp falham, o cliente confere aqui o celular e o e-mail
+              informados na adesão e escolhe por qual canal quer receber as atualizações.
+            </p>
+            <ul class="destaques">
+              <li>Confirmar ou editar telefone e e-mail</li>
+              <li>Escolha do canal: WhatsApp, e-mail ou ambos</li>
+              <li>Validação dos campos e mensagem de sucesso</li>
+            </ul>
+            <div class="responsavel">
+              <span class="responsavel-foto">LA</span>
+              <div>
+                <small>Responsável pela tela</small>
+                <strong>Laura Amorim</strong>
+                <span>@amorimplaura</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- HU03 -->
+          <article class="card" data-tela="pages/central-de-avisos.html" data-arquivos="central-de-avisos.html">
+            <span class="tela-id">HU03</span>
+            <h2>Central de avisos</h2>
+            <p>
+              Reúne em um só lugar todas as mensagens que a Bulbe enviou e as pendências que dependem do cliente.
+              Se um WhatsApp não chegou, o aviso continua disponível aqui.
+            </p>
+            <ul class="destaques">
+              <li>Pendências no topo, destacadas e com prazo</li>
+              <li>Data, título e canal de envio de cada aviso</li>
+              <li>O que foi lido fica salvo no navegador</li>
+            </ul>
+            <div class="responsavel">
+              <span class="responsavel-foto">DF</span>
+              <div>
+                <small>Responsável pela tela</small>
+                <strong>Daniel Ferreira</strong>
+                <span>@danielferreira88</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- HU04 -->
+          <article class="card" data-tela="pages/acompanhe-sua-energia.html" data-arquivos="acompanhe-sua-energia.html">
+            <span class="tela-id">HU04</span>
+            <h2>Acompanhe sua energia</h2>
+            <p>
+              A tela principal do app nos acessos seguintes. Mostra, com uma animação, o caminho da energia
+              da usina até a casa do cliente e em que etapa a adesão está, para ele ter certeza de que o processo
+              está andando enquanto ainda paga a Cemig.
+            </p>
+            <ul class="destaques">
+              <li>Etapa atual, se o cliente precisa fazer algo e aviso de atraso</li>
+              <li>Economia estimada antes da conexão</li>
+              <li>Depois da conexão: energia recebida e economia acumulada</li>
+            </ul>
+            <div class="responsavel">
+              <span class="responsavel-foto">BP</span>
+              <div>
+                <small>Responsável pela tela</small>
+                <strong>Bernardo Paolucci</strong>
+                <span>@bpaolucci</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- HU05 (inclui as telas de explicação abertas a partir dela) -->
+          <article class="card" data-tela="pages/primeira-fatura.html"
+                   data-arquivos="primeira-fatura.html explicacao-contas.html explicacao-empresas.html explicacao-recebimento.html duvidas-fatura.html central-orientacoes.html">
+            <span class="tela-id">HU05</span>
+            <h2>Entenda sua primeira fatura</h2>
+            <p>
+              Explica de forma simples como vai funcionar a primeira cobrança: a relação entre as contas da Cemig
+              e da Bulbe, qual conta pagar durante a espera e como a fatura chega.
+            </p>
+            <ul class="destaques">
+              <li>Qual conta pagar em cada momento</li>
+              <li>Canais de envio da fatura (WhatsApp e e-mail)</li>
+              <li>O que fazer se a fatura não chegar (+ 4 telas de explicação)</li>
+            </ul>
+            <div class="responsavel">
+              <span class="responsavel-foto">MC</span>
+              <div>
+                <small>Responsável pela tela</small>
+                <strong>Maria Cecília Cotta</strong>
+                <span>@MariaCeciliaCotta</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <!-- Setas e contador -->
+      <div class="carrossel-controles">
+        <button type="button" class="seta" id="anterior" aria-label="Tela anterior">‹</button>
+        <span class="contador" id="contador" aria-live="polite">1 / 5</span>
+        <button type="button" class="seta" id="proxima" aria-label="Próxima tela">›</button>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="rodape">
+    <p>Dados fictícios</p>
+  </footer>
+
+</body>
+</html>

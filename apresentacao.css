@@ -34,6 +34,29 @@ button {
   text-align: center;
 }
 
+/* Link de volta para o menu das apresentações */
+.abertura {
+  position: relative;
+}
+
+.voltar-menu {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: var(--cor-branco);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 999px;
+  padding: 6px 14px;
+}
+
+.voltar-menu:hover,
+.voltar-menu:focus-visible {
+  background: rgba(255, 255, 255, 0.12);
+}
+
 .abertura-logo {
   height: 36px;
   margin-bottom: 24px;
